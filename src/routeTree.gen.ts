@@ -9,38 +9,208 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SlaPoliciesRouteImport } from './routes/sla-policies'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as CategoriesRouteImport } from './routes/categories'
+import { Route as AiFeedbackRouteImport } from './routes/ai-feedback'
+import { Route as AccountsRouteImport } from './routes/accounts'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CasesIndexRouteImport } from './routes/cases.index'
+import { Route as CasesCaseIdRouteImport } from './routes/cases.$caseId'
 
+const SlaPoliciesRoute = SlaPoliciesRouteImport.update({
+  id: '/sla-policies',
+  path: '/sla-policies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesRoute = CategoriesRouteImport.update({
+  id: '/categories',
+  path: '/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiFeedbackRoute = AiFeedbackRouteImport.update({
+  id: '/ai-feedback',
+  path: '/ai-feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountsRoute = AccountsRouteImport.update({
+  id: '/accounts',
+  path: '/accounts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasesIndexRoute = CasesIndexRouteImport.update({
+  id: '/cases/',
+  path: '/cases/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasesCaseIdRoute = CasesCaseIdRouteImport.update({
+  id: '/cases/$caseId',
+  path: '/cases/$caseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/ai-feedback': typeof AiFeedbackRoute
+  '/categories': typeof CategoriesRoute
+  '/contacts': typeof ContactsRoute
+  '/reports': typeof ReportsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sla-policies': typeof SlaPoliciesRoute
+  '/cases/$caseId': typeof CasesCaseIdRoute
+  '/cases/': typeof CasesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/ai-feedback': typeof AiFeedbackRoute
+  '/categories': typeof CategoriesRoute
+  '/contacts': typeof ContactsRoute
+  '/reports': typeof ReportsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sla-policies': typeof SlaPoliciesRoute
+  '/cases/$caseId': typeof CasesCaseIdRoute
+  '/cases': typeof CasesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/ai-feedback': typeof AiFeedbackRoute
+  '/categories': typeof CategoriesRoute
+  '/contacts': typeof ContactsRoute
+  '/reports': typeof ReportsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sla-policies': typeof SlaPoliciesRoute
+  '/cases/$caseId': typeof CasesCaseIdRoute
+  '/cases/': typeof CasesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/accounts'
+    | '/ai-feedback'
+    | '/categories'
+    | '/contacts'
+    | '/reports'
+    | '/sitemap.xml'
+    | '/sla-policies'
+    | '/cases/$caseId'
+    | '/cases/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/accounts'
+    | '/ai-feedback'
+    | '/categories'
+    | '/contacts'
+    | '/reports'
+    | '/sitemap.xml'
+    | '/sla-policies'
+    | '/cases/$caseId'
+    | '/cases'
+  id:
+    | '__root__'
+    | '/'
+    | '/accounts'
+    | '/ai-feedback'
+    | '/categories'
+    | '/contacts'
+    | '/reports'
+    | '/sitemap.xml'
+    | '/sla-policies'
+    | '/cases/$caseId'
+    | '/cases/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountsRoute: typeof AccountsRoute
+  AiFeedbackRoute: typeof AiFeedbackRoute
+  CategoriesRoute: typeof CategoriesRoute
+  ContactsRoute: typeof ContactsRoute
+  ReportsRoute: typeof ReportsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SlaPoliciesRoute: typeof SlaPoliciesRoute
+  CasesCaseIdRoute: typeof CasesCaseIdRoute
+  CasesIndexRoute: typeof CasesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sla-policies': {
+      id: '/sla-policies'
+      path: '/sla-policies'
+      fullPath: '/sla-policies'
+      preLoaderRoute: typeof SlaPoliciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories': {
+      id: '/categories'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-feedback': {
+      id: '/ai-feedback'
+      path: '/ai-feedback'
+      fullPath: '/ai-feedback'
+      preLoaderRoute: typeof AiFeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accounts': {
+      id: '/accounts'
+      path: '/accounts'
+      fullPath: '/accounts'
+      preLoaderRoute: typeof AccountsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +218,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cases/': {
+      id: '/cases/'
+      path: '/cases'
+      fullPath: '/cases/'
+      preLoaderRoute: typeof CasesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases/$caseId': {
+      id: '/cases/$caseId'
+      path: '/cases/$caseId'
+      fullPath: '/cases/$caseId'
+      preLoaderRoute: typeof CasesCaseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountsRoute: AccountsRoute,
+  AiFeedbackRoute: AiFeedbackRoute,
+  CategoriesRoute: CategoriesRoute,
+  ContactsRoute: ContactsRoute,
+  ReportsRoute: ReportsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SlaPoliciesRoute: SlaPoliciesRoute,
+  CasesCaseIdRoute: CasesCaseIdRoute,
+  CasesIndexRoute: CasesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
