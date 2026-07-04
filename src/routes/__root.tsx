@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AI Powered CST System — Telecom Support Ticketing" },
+      { title: "Dashboard — AI Powered CST System" },
       {
         name: "description",
         content:
           "AI-powered customer support ticketing for telecom: case management, SLA automation, AI-suggested replies, reports and dashboards.",
       },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "AI Powered CST System" },
+      { property: "og:title", content: "Dashboard — AI Powered CST System" },
       {
         property: "og:description",
         content:
@@ -94,6 +94,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Dashboard — AI Powered CST System" },
+      { name: "description", content: "Live overview of open cases, SLA compliance, priorities and agent performance." },
+      { property: "og:description", content: "Live overview of open cases, SLA compliance, priorities and agent performance." },
+      { name: "twitter:description", content: "Live overview of open cases, SLA compliance, priorities and agent performance." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a43fcb48-03a3-4759-aa8c-0389b2ab36c7/id-preview-d8fbcc80--cb1f1fa5-1135-4bfe-a1a3-a12e0b43415e.lovable.app-1783070766020.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a43fcb48-03a3-4759-aa8c-0389b2ab36c7/id-preview-d8fbcc80--cb1f1fa5-1135-4bfe-a1a3-a12e0b43415e.lovable.app-1783070766020.png" },
     ],
     links: [
       {
