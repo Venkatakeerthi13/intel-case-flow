@@ -23,3 +23,5 @@ A Salesforce-style AI-powered telecom customer support ticketing system develope
 https://github.com/Venkatakeerthi13/intel-case-flow
 ## Deployed Link
 https://ai-powered-customer-support.lovable.app
+## Video Demonstration
+https://drive.google.com/file/d/1sRttFImU0GJ5M7EsJ2l05QPqEv1KLCML/view?usp=sharing
